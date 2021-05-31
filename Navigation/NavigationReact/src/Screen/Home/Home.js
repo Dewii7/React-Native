@@ -7,7 +7,7 @@ export default function Home(props) {
     <View>
       <Text>Home</Text>
       <TouchableOpacity onPress={() => props.navigation.navigate('About')}>
-        <Text>Back to About yaaaa</Text>
+        <Text>Let's Go Move to About</Text>
       </TouchableOpacity>
     </View>
   );
