@@ -1,50 +1,45 @@
 import React from 'react';
-import {View, Text, Image, ScrollView, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
+// import {ToggleButton} from 'react-native-paper';
 
-const FlexBox = () => {
+const App = ({tabData, active, move}) => {
   return (
     <ScrollView>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          marginTop: 10,
-        }}>
-        <Text>Home</Text>
-        <Text>About</Text>
-        <Text>Products</Text>
-        <Text>Contact</Text>
-      </View>
-
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          marginTop: 20,
-        }}>
-        <Image
-          source={{uri: 'https://reactjs.org/logo-og.png'}}
-          style={{
-            width: 100,
-            height: 100,
-            borderRadius: 50,
-            marginRight: 15,
-            marginLeft: 15,
-          }}
-        />
-        <View>
-          <Text
-            style={{
-              fontSize: 20,
-              fontWeight: 'bold',
-            }}>
-            Dewi Anggraini
-          </Text>
-          <Text>Mobile Developer</Text>
-        </View>
+      <View style={styles(active).container}>
+        {tabData.map((title, index) => (
+          <TouchableOpacity
+            style={styles(active, index).tabActive}
+            key={index}
+            onPress={() => move(index)}>
+            <Text style={styles(active, index).textStyle}>{title}</Text>
+          </TouchableOpacity>
+        ))}
       </View>
     </ScrollView>
   );
 };
 
-export default FlexBox;
+export default App;
+
+const styles = (active, index) =>
+  StyleSheet.create({
+    container: {
+      padding: 20,
+      flexDirection: 'row',
+      justifyContent: 'space-evenly',
+    },
+    tabActive: {
+      backgroundColor: active === index ? 'red' : null,
+      padding: 20,
+      borderRadius: 50,
+    },
+    textStyle: {
+      color: active === index ? 'white' : 'black',
+    },
+  });
