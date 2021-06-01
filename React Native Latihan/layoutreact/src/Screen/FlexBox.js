@@ -1,27 +1,19 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 // import {ToggleButton} from 'react-native-paper';
 
 const App = ({tabData, active, move}) => {
   return (
-    <ScrollView>
-      <View style={styles(active).container}>
-        {tabData.map((title, index) => (
-          <TouchableOpacity
-            style={styles(active, index).tabActive}
-            key={index}
-            onPress={() => move(index)}>
-            <Text style={styles(active, index).textStyle}>{title}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
-    </ScrollView>
+    <View style={styles(active).container}>
+      {tabData.map((title, index) => (
+        <TouchableOpacity
+          style={styles(active, index).tabActive}
+          key={index}
+          onPress={() => move(index)}>
+          <Text style={styles(active, index).textStyle}>{title}</Text>
+        </TouchableOpacity>
+      ))}
+    </View>
   );
 };
 
@@ -35,7 +27,7 @@ const styles = (active, index) =>
       justifyContent: 'space-evenly',
     },
     tabActive: {
-      backgroundColor: active === index ? 'red' : null,
+      backgroundColor: active === index ? '#48C9B0' : null,
       padding: 20,
       borderRadius: 50,
     },

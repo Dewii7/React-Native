@@ -1,9 +1,10 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, StyleSheet, ScrollView} from 'react-native';
 
 export default function Home() {
   return (
-    <View>
+    <ScrollView>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Image
           source={{uri: 'https://reactjs.org/logo-og.png'}}
@@ -20,6 +21,6 @@ export default function Home() {
           <Text style={{fontSize: 15}}>Mobile Developer</Text>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
