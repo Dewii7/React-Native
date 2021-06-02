@@ -17,7 +17,7 @@ const Stack = createStackNavigator();
 
 const App = () => {
   const [active, setActive] = useState(0);
-  const tabData = ['Home', 'About', 'Products', 'Contact'];
+  const tabData = ['Home', 'About', 'Products', 'Contact', 'Profile'];
   const moveData = index => {
     setActive(index);
   };
