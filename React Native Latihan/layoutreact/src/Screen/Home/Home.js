@@ -1,7 +1,8 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {View, NotoSans, Image, ScrollView} from 'react-native';
-import {Fonts} from '../NotoSans/NotoSans';
+import {Text} from 'react-native';
+// import {Fonts} from '../NotoSans/NotoSans';
 
 export default function Home() {
   return (
@@ -18,14 +19,9 @@ export default function Home() {
           }}
         />
         <View>
-          <NotoSans
-            // title={{name: 'Dewi Anggraini'}}
-            style={{fontSize: 20, fontWeight: 'bold'}}
-          />
-          <NotoSans
-            //  title={{job: 'Mobile Developer'}}
-            style={{fontSize: 15}}
-          />
+          <Text style={{fontSize: 20, fontWeight: 'bold'}}>Dewi Anggraini</Text>
+
+          <Text style={{fontSize: 15}}>Mobile Developer</Text>
         </View>
       </View>
     </ScrollView>
