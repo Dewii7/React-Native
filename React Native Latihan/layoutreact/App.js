@@ -1,11 +1,11 @@
 import 'react-native-gesture-handler';
 import React, {useState} from 'react';
 import {View, Text, ScrollView} from 'react-native';
-import FlexBox from './src/Screen/FlexBox';
-import Home from './src/Screen/Home';
-import About from './src/Screen/About';
-import Products from './src/Screen/Products';
-import Contact from './src/Screen/Contact';
+import FlexBox from './src/Screen/FlexBox/FlexBox';
+import Home from './src/Screen/Home/Home';
+import About from './src/Screen/About/About';
+import Products from './src/Screen/Products/Products';
+import Contact from './src/Screen/Contact/Contact';
 import {NavigationContainer} from '@react-navigation/native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
