@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity, ActivityIndicator} from 'react-native';
+import {
+  View,
+  Image,
+  Text,
+  TouchableOpacity,
+  ActivityIndicator,
+  ScrollView,
+} from 'react-native';
 import {connect} from 'react-redux';
 import {getDataMovieAction} from './homeAction';
 
@@ -8,15 +15,42 @@ const HomePage = ({name, dataMovie, getDataMovieAction, isLoading}) => {
   // console.log(dataMovie);
   return (
     <View>
-      <Text>Hallo nama saya {name}</Text>
       {isLoading && <ActivityIndicator size="small" color="black" />}
-      {dataMovie.map((e, i) => (
-        <Text key={i}>{e.original_title}</Text>
-      ))}
+      <ScrollView horizontal>
+        {dataMovie.map((e, i) => (
+          <>
+            {/* <Text key={i}>{e.original_title}</Text> */}
+            <Image
+              source={{
+                uri: `https://image.tmdb.org/t/p/original${e.poster_path}`,
+              }}
+              style={{width: 100, height: 300, resizeMode: 'cover'}}
+            />
+          </>
+        ))}
+      </ScrollView>
       <TouchableOpacity onPress={() => getDataMovieAction()}>
-        <Text style={{color: 'blue'}}>AMBIL DATA</Text>
+        <Text style={{color: 'blue', textAlign: 'center'}}>AMBIL DATA</Text>
       </TouchableOpacity>
     </View>
+    // <View>
+    //   {isLoading && <ActivityIndicator size="small" color="black" />}
+    //   <ScrollView horizontal>
+    //     {dataMovie &&
+    //       dataMovie.map((e, i) => (
+    //         <>
+    //           {/* <Image
+    //             source={{
+    //               uri: `https://image.tmdb.org/t/p/original${e.poster.path}`,
+    //             }}
+    //             style={{width: 100, height: 300, resizeMode: 'cover'}}
+    //           /> */}
+    //           <Text key={i}>{e.original_title}</Text>
+    //         </>
+    //       ))}
+    //   </ScrollView>
+
+    // </View>
   );
 };
 
