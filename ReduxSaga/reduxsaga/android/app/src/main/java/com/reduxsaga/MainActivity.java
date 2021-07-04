@@ -1,6 +1,9 @@
 package com.reduxsaga;
 
 import com.facebook.react.ReactActivity;
+// splash screen
+// import org.devio.rn.splashscreen.SplashScreen; 
+// import android.os.Bundle;
 
 public class MainActivity extends ReactActivity {
 
@@ -12,4 +15,11 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "reduxsaga";
   }
+
+  // tambahan utk splash screen
+  // @Override
+  //   protected void onCreate(Bundle savedInstanceState) {
+  //       SplashScreen.show(this);  // here
+  //       super.onCreate(savedInstanceState);
+  //   }
 }
